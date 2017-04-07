@@ -7,17 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GameStore.UIWeb.DataBase
+namespace GameStore.UIWeb.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Publisher
+    public partial class PublisherSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Publisher()
+        public PublisherSet()
         {
-            this.Game = new HashSet<Game>();
+            this.GameSet = new HashSet<GameSet>();
         }
     
         public int Id { get; set; }
@@ -27,6 +27,6 @@ namespace GameStore.UIWeb.DataBase
         public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Game> Game { get; set; }
+        public virtual ICollection<GameSet> GameSet { get; set; }
     }
 }

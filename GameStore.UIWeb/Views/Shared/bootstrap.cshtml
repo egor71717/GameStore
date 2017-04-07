@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "bootstrap";
+}
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="~/GameSets/Index"><img alt="Brand" src="~/Content/logo.ico" height='60 ' width="60" /></a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="~/GameSets/Index" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                       aria-expanded="false">Games<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu" id="MyTab">
+                        <li role="presentation">
+                            <a href="#" role="tab" data-toggle="tab">
+                                New in catalog
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li role="presentation">
+                            <a href="#" role="tab" data-toggle="tab">
+                                <span class="glyphicon glyphicon-fire"></span> Hot prices
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li role="presentation">
+                            <a href="#" role="tab" data-toggle="tab">
+                                Category 1
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li role="presentation">
+                            <a href="#" role="tab" data-toggle="tab">
+                                Category 2
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li role="presentation">
+                            <a href="#" role="tab" data-toggle="tab">
+                                Category 3
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="~/PublisherSets/Index">Publishers</a></li>
+                <li><a href="~/UserSets/Index">Users</a></li>
+            </ul>
+
+            <form class="navbar-form">
+                <input type="submit" class="btn btn-danger navbar-btn navbar-right" value="Search" />
+                <input type="text" class="form-control col-md-push-10 navbar-btn navbar-right" />
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+

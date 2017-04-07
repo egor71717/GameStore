@@ -135,17 +135,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="DataBase\GameStoreModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GameStoreModel.Context.cs</LastGenOutput>
-      <DependentUpon>GameStoreModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="DataBase\GameStoreModel.edmx.sql" />
-    <Content Include="DataBase\GameStoreModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GameStoreModel.cs</LastGenOutput>
-      <DependentUpon>GameStoreModel.edmx</DependentUpon>
-    </Content>
+    <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -156,57 +146,75 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="DataBase\GameStoreModel.edmx.diagram">
-      <DependentUpon>GameStoreModel.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="DataBase\GameStoreModel.edmx">
+    <EntityDeploy Include="Models\GameStoreModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>GameStoreModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Models\GameStoreModel.edmx.diagram">
+      <DependentUpon>GameStoreModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Models\GameStoreModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GameStoreModel.edmx</DependentUpon>
+      <LastGenOutput>GameStoreModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\GameStoreModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GameStoreModel.edmx</DependentUpon>
+      <LastGenOutput>GameStoreModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="DataBase\Comments.cs">
+    <Compile Include="Controllers\GameSetsController.cs" />
+    <Compile Include="Controllers\PublisherSetsController.cs" />
+    <Compile Include="Controllers\UserSetsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CommentsSet.cs">
       <DependentUpon>GameStoreModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataBase\Game.cs">
+    <Compile Include="Models\GameSet.cs">
       <DependentUpon>GameStoreModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataBase\GameStoreModel.Context.cs">
+    <Compile Include="Models\GameStoreModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GameStoreModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataBase\GameStoreModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GameStoreModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataBase\GameStoreModel.Designer.cs">
+    <Compile Include="Models\GameStoreModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GameStoreModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DataBase\Publisher.cs">
+    <Compile Include="Models\PublisherSet.cs">
       <DependentUpon>GameStoreModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataBase\Purchases.cs">
+    <Compile Include="Models\PurchasesSet.cs">
       <DependentUpon>GameStoreModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataBase\Role.cs">
+    <Compile Include="Models\RoleSet.cs">
       <DependentUpon>GameStoreModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataBase\User.cs">
+    <Compile Include="Models\UserSet.cs">
       <DependentUpon>GameStoreModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -217,6 +225,26 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\UserSets\Create.cshtml" />
+    <Content Include="Views\UserSets\Delete.cshtml" />
+    <Content Include="Views\UserSets\Details.cshtml" />
+    <Content Include="Views\UserSets\Edit.cshtml" />
+    <Content Include="Views\UserSets\Index.cshtml" />
+    <Content Include="Views\PublisherSets\Create.cshtml" />
+    <Content Include="Views\PublisherSets\Delete.cshtml" />
+    <Content Include="Views\PublisherSets\Details.cshtml" />
+    <Content Include="Views\PublisherSets\Edit.cshtml" />
+    <Content Include="Views\PublisherSets\Index.cshtml" />
+    <Content Include="Views\PublisherSets\Publishers.cshtml" />
+    <Content Include="Views\GameSets\Create.cshtml" />
+    <Content Include="Views\GameSets\Delete.cshtml" />
+    <Content Include="Views\GameSets\Details.cshtml" />
+    <Content Include="Views\GameSets\Edit.cshtml" />
+    <Content Include="Views\GameSets\Index.cshtml" />
+    <Content Include="Views\GameSets\Games.cshtml" />
+    <Content Include="Views\Shared\bootstrap.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -226,8 +254,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+    <Folder Include="DataBase\" />
+    <Folder Include="Views\Game\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

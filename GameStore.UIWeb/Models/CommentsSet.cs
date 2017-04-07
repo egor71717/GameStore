@@ -7,17 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GameStore.UIWeb.DataBase
+namespace GameStore.UIWeb.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Purchases
+    public partial class CommentsSet
     {
         public int Id { get; set; }
+        public string Text { get; set; }
         public System.DateTime DateTime { get; set; }
+        public int User_Id { get; set; }
+        public int Game_Id { get; set; }
     
-        public virtual Game Game { get; set; }
-        public virtual User User { get; set; }
+        public virtual GameSet GameSet { get; set; }
+        public virtual UserSet UserSet { get; set; }
     }
 }
