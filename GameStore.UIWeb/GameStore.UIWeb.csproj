@@ -199,6 +199,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GameStoreModel.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\GameStoreModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GameStoreModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\GameStoreModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -211,6 +216,12 @@
       <DependentUpon>GameStoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RoleSet.cs">
+      <DependentUpon>GameStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>GameStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
       <DependentUpon>GameStoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UserSet.cs">
@@ -245,6 +256,8 @@
     <Content Include="Views\GameSets\Index.cshtml" />
     <Content Include="Views\GameSets\Games.cshtml" />
     <Content Include="Views\Shared\bootstrap.cshtml" />
+    <Content Include="Views\GameSets\Main.cshtml" />
+    <Content Include="Views\UserSets\test.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
