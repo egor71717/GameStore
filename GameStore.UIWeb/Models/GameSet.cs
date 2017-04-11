@@ -30,7 +30,7 @@ namespace GameStore.UIWeb.Models
         public System.DateTime Date { get; set; }
         public string Requirements { get; set; }
         public double Discount { get; set; }
-        public byte[] Picture { get; set; }
+        public string Picture { get; set; }
         public int Publisher_Id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
