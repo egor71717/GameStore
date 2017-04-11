@@ -24,6 +24,11 @@ namespace GameStore.UIWeb.Controllers
             var gameSet = db.GameSet.Include(g => g.PublisherSet);
             return View(gameSet.ToList());
         }
+        public ActionResult Main()
+        {
+            var gameSet = db.GameSet.Include(g => g.PublisherSet);
+            return View(gameSet.ToList());
+        }
 
         // GET: GameSets/Details/5
         public ActionResult Details(int? id)
