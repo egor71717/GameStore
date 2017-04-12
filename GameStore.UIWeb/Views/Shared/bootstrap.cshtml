@@ -14,32 +14,32 @@
                        aria-expanded="false">Games<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu" id="MyTab">
                         <li role="presentation">
-                            <a href="#" role="tab" data-toggle="tab">
+                            <a href="@Url.Action("ShowNewGames", "GameSets")">
                                 New in catalog
                             </a>
                         </li>
                         <li class="divider"></li>
                         <li role="presentation">
-                            <a href="#" role="tab" data-toggle="tab">
+                            <a href="@Url.Action("ShowCheapGames", "GameSets")">
                                 <span class="glyphicon glyphicon-fire"></span> Hot prices
                             </a>
                         </li>
                         <li class="divider"></li>
                         <li role="presentation">
-                            <a href="#" role="tab" data-toggle="tab">
-                                Category 1
+                            <a href="@Url.Action("ShowGamesWithCategory","GameSets",new {category="Экшн" })">
+                                Action
                             </a>
                         </li>
                         <li class="divider"></li>
                         <li role="presentation">
-                            <a href="#" role="tab" data-toggle="tab">
-                                Category 2
+                            <a href="@Url.Action("ShowGamesWithCategory","GameSets",new {category="Хоррор" })">
+                                Horror
                             </a>
                         </li>
                         <li class="divider"></li>
                         <li role="presentation">
-                            <a href="#" role="tab" data-toggle="tab">
-                                Category 3
+                            <a href="@Url.Action("ShowGamesWithCategory","GameSets",new {category="Инди" })">
+                                Indie
                             </a>
                         </li>
                     </ul>

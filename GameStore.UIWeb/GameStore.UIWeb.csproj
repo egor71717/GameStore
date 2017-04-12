@@ -258,6 +258,10 @@
     <Content Include="Views\Shared\bootstrap.cshtml" />
     <Content Include="Views\GameSets\Main.cshtml" />
     <Content Include="Views\UserSets\test.cshtml" />
+    <Content Include="Views\GameSets\.cshtml" />
+    <Content Include="Views\GameSets\ShowNewGames.cshtml" />
+    <Content Include="Views\GameSets\ShowCheapGames.cshtml" />
+    <Content Include="Views\GameSets\ShowGamesWithCategory.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

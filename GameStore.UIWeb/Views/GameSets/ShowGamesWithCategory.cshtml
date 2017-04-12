@@ -1,23 +1,16 @@
 ﻿@model IEnumerable<GameStore.UIWeb.Models.GameSet>
-
 @{
-    ViewBag.Title = "Game catalog";
+    ViewBag.Title = "ShowGamesWithCategory";
 }
 
-<h2>Game Catalog</h2>
-
-<p>
-    @Html.ActionLink("Sort by name", "SortByName")
-    @Html.ActionLink("Sort by date", "SortByDate")
-    @Html.ActionLink("Sort by price", "SortByPrice")
-</p>
+<h2>ShowGamesWithCategory</h2>
 
 @foreach (var item in Model)
 {
     <div class="list-group media">
         <a href="~/@string.Format("GameSets/Details?id={0}",item.Id)" class="list-group-item well">
-            <div class="media-left media-middle" >
-                <img alt="Logo" src="@Url.Content(item.Picture)" height='69' width="184" class="media-object"/>
+            <div class="media-left media-middle">
+                <img alt="Logo" src="@Url.Content(item.Picture)" height='69' width="184" class="media-object" />
             </div>
             <div class="media-body">
                 <h4 class="media-heading">@Html.DisplayFor(modelItem => item.Name)</h4><p></p>
@@ -29,6 +22,5 @@
         </a>
     </div>
 }
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+
+

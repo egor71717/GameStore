@@ -117,7 +117,7 @@ namespace GameStore.UIWeb.Controllers
             }
             return View(gameSet);
         }
-
+      
         // POST: GameSets/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -136,6 +136,70 @@ namespace GameStore.UIWeb.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        //Queries
+        //new in catalog
+        public ActionResult ShowNewGames()
+        {
+            var foundGames = from game in db.GameSet
+                             where game.Date > new DateTime(2017, 4, 7)
+                             orderby game.Date descending
+                             select game;
+
+            return View(foundGames);
+        }
+
+        //cheap games
+        public ActionResult ShowCheapGames()
+        {
+            var foundGames = from game in db.GameSet
+                             where game.Price < 20
+                             orderby game.Price ascending
+                             select game;
+
+            return View(foundGames);
+        }
+
+        //filter by category
+        public ActionResult ShowGamesWithCategory(string category)
+        {
+            var foundGames = from game in db.GameSet
+                             where game.Category.Contains(category)
+                             orderby game.Date descending
+                             select game;
+
+            return View(foundGames);
+        }
+
+        //sort by name
+        public ActionResult SortByName()
+        {
+            var foundGames = from game in db.GameSet
+                             orderby game.Name ascending
+                             select game;
+
+            return View("Main", foundGames);
+        }
+
+        //sort by date
+        public ActionResult SortByDate()
+        {
+            var foundGames = from game in db.GameSet
+                             orderby game.Date descending
+                             select game;
+
+            return View("Main", foundGames);
+        }
+
+        //sort by price
+        public ActionResult SortByPrice()
+        {
+            var foundGames = from game in db.GameSet
+                             orderby game.Price ascending
+                             select game;
+
+            return View("Main",foundGames);
         }
     }
 }
