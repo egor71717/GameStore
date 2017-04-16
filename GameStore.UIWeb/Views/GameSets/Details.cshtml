@@ -4,11 +4,19 @@
     ViewBag.Title = "Details";
 }
 
+<h2>Details</h2>
+
 <div>
-    <h4>@Html.DisplayFor(model => model.Name)</h4>
+    <h4>GameSet</h4>
     <hr />
-        <img alt="Logo" src="@Url.Content(Model.Picture)" height='69' width="184"/>
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Description)
@@ -57,18 +65,26 @@
         <dd>
             @Html.DisplayFor(model => model.Discount)
         </dd>
+
         <dt>
-            Publisher
+            @Html.DisplayNameFor(model => model.Picture)
         </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Picture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublisherSet.Name)
+        </dt>
+
         <dd>
             @Html.DisplayFor(model => model.PublisherSet.Name)
         </dd>
 
     </dl>
-    
 </div>
 <p>
-   @* @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Main")*@
-    @Html.Partial("~/Views/CommentsSets/CommentsForGame.cshtml",Model.CommentsSet)
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Main")
 </p>
