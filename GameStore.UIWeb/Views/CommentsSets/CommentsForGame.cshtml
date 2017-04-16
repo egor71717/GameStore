@@ -1,48 +1,43 @@
 ﻿@model IEnumerable<GameStore.UIWeb.Models.CommentsSet>
-
 @{
     ViewBag.Title = "CommentsForGame";
 }
+<link rel="stylesheet" type="text/css" href="~/Stylesheets/Comment.css">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Text)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GameSet.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserSet.Login)
-        </th>
-        <th></th>
-    </tr>
+<br />
+<h2> Comments</h2>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Text)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GameSet.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserSet.Login)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+@foreach (var item in Model)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="panel panel-white post panel-shadow">
+                    <div class="post-heading">
+                        <div class="pull-left image">
+                            <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
+                        </div>
+                        <div class="pull-left meta">
+                            <div class="title h5">
+                                <a href="#"><b>@item.UserSet.FirstName @item.UserSet.LastName</b></a>
+                                made a post.
+                            </div>
+                            <h6 class="text-muted time">@item.DateTime</h6>
+                        </div>
+                    </div>
+                    <div class="post-description">
+                        <p>@item.Text</p>
+                        <div class="stats">
+                            <a href="#" class="btn btn-default stat-item">
+                                <span class="glyphicon glyphicon-thumbs-up"></span>2
+                            </a>
+                            <a href="#" class="btn btn-default stat-item">
+                                <span class="glyphicon glyphicon-thumbs-down"></span>12
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 }
-
-</table>

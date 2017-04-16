@@ -5,19 +5,18 @@
 }
 
 <div>
-    <h4>@Html.DisplayFor(model => model.Name)</h4>
+    <h1>@Html.DisplayFor(model => model.Name)</h1>
     <hr />
-        <img alt="Logo" src="@Url.Content(Model.Picture)" height='69' width="184"/>
+    <div class="media">
+        <div class="media-left media-middle">
+             <img alt="Logo" src="@Url.Content(Model.Picture)" height='69' width="184" />
+        </div>
+        <div class="media-body">
+                @Html.DisplayFor(model => model.Description)
+        </div>
+    </div>
+    <br />
     <dl class="dl-horizontal">
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Price)
         </dt>
