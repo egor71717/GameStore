@@ -178,10 +178,12 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Stylesheets\Comment.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CommentsSetsController.cs" />
     <Compile Include="Controllers\GameSetsController.cs" />
     <Compile Include="Controllers\PublisherSetsController.cs" />
     <Compile Include="Controllers\UserSetsController.cs" />
@@ -262,6 +264,12 @@
     <Content Include="Views\GameSets\ShowNewGames.cshtml" />
     <Content Include="Views\GameSets\ShowCheapGames.cshtml" />
     <Content Include="Views\GameSets\ShowGamesWithCategory.cshtml" />
+    <Content Include="Views\CommentsSets\CommentsForGame.cshtml" />
+    <Content Include="Views\CommentsSets\Create.cshtml" />
+    <Content Include="Views\CommentsSets\Delete.cshtml" />
+    <Content Include="Views\CommentsSets\Details.cshtml" />
+    <Content Include="Views\CommentsSets\Edit.cshtml" />
+    <Content Include="Views\CommentsSets\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
