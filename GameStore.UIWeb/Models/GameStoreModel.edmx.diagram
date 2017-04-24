@@ -18,6 +18,15 @@
         <AssociationConnector Association="Model.FK_UserPurchases" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK_UsersRole" ManuallyRouted="false" />
         <AssociationConnector Association="Model.UsersGame" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.AspNetRoles" Width="1.5" PointX="8.75" PointY="10.5" />
+        <EntityTypeShape EntityType="Model.AspNetUserClaims" Width="1.5" PointX="13.25" PointY="9" />
+        <EntityTypeShape EntityType="Model.AspNetUserLogins" Width="1.5" PointX="13.25" PointY="11.75" />
+        <EntityTypeShape EntityType="Model.AspNetUsers" Width="1.5" PointX="11" PointY="9.375" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" />
+        <AssociationConnector Association="Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="Model.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
