@@ -397,7 +397,7 @@ namespace GameStore.UIWeb.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Main", "GameSets");
         }
 
         //
@@ -454,7 +454,7 @@ namespace GameStore.UIWeb.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Main", "GameSets");
+            return RedirectToAction("Index", "Users");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

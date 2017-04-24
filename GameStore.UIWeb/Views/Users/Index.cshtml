@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@if (ViewBag.displayMenu == "Yes")
+{
+    <h1>Welcome Admin. Here you can manage data.</h1>
+        <ol>
+            <h3>
+                <li>@Html.ActionLink("Manage Games", "Index", "GameSets")</li>
+                <br/>
+                <li>@Html.ActionLink("Manage Publishers", "Index", "PublicherSets")</li>
+                <br/>
+                <li>@Html.ActionLink("Manage Users", "Index", "UserSets")</li>
+            </h3>
+        </ol>
+}
+else
+{
+    <h2>  Welcome <strong>@ViewBag.Name</strong> :) .</h2>
+}  
