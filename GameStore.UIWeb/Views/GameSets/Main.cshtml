@@ -1,10 +1,16 @@
 ﻿@model IEnumerable<GameStore.UIWeb.Models.GameSet>
 
+@section Scripts
+{
+    <script src="jquery-3.2.0.min.js"></script>
+    <script src="~/Content/GameItemDescription.js"></script>
+}
+
 @{
     ViewBag.Title = "Game catalog";
 }
 
-<h2>Game Catalog</h2>
+<h2> Game Catalog</h2>
 
 <p>
     @Html.ActionLink("Sort by name", "SortByName")
@@ -21,11 +27,18 @@
             </div>
             <div class="media-body">
                 <h4 class="media-heading">@Html.DisplayFor(modelItem => item.Name)</h4><p></p>
-                <p class="list-group-item-text">@Html.DisplayFor(modelItem => item.Description)</p><p></p>
                 <p class="list-group-item-text">Category: @Html.DisplayFor(modelItem => item.Category)</p>
-                <p class="list-group-item-text">Publisher: @Html.DisplayFor(modelItem => item.PublisherSet.Name)</p><p></p>
+                <p class="list-group-item-text">Publisher: @Html.DisplayFor(modelItem => item.PublisherSet.Name)</p>
                 <p class="list-group-item-text">@Html.DisplayFor(modelItem => item.Price)$</p>
+                @*<p class="list-group-item-text">@Html.DisplayFor(modelItem => item.Discount)</p>*@<p></p>
+                <div class="header">
+                    <span>See description</span>
+                </div>
+                <div class="content">
+                    <p class="list-group-item-text">@Html.DisplayFor(modelItem => item.Description)</p>
+                </div>
             </div>
         </a>
-    </div>
+</div>
+
 }
