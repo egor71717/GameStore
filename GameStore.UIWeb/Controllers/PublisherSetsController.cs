@@ -20,6 +20,11 @@ namespace GameStore.UIWeb.Controllers
             return View(db.PublisherSet.ToList());
         }
 
+        public ActionResult Main()
+        {
+            return View(db.PublisherSet.ToList());
+        }
+
         // GET: PublisherSets/Details/5
         public ActionResult Details(int? id)
         {

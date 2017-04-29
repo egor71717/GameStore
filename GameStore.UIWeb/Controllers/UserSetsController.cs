@@ -21,6 +21,12 @@ namespace GameStore.UIWeb.Controllers
             return View(userSet.ToList());
         }
 
+        public ActionResult Main()
+        {
+            var userSet = db.UserSet.Include(u => u.RoleSet);
+            return View(userSet.ToList());
+        }
+
         // GET: UserSets/Details/5
         public ActionResult Details(int? id)
         {
