@@ -5,7 +5,7 @@ using System.IO;
 
 namespace GameStore.EntityFramework
 {
-    static class ImageConverter
+    public static class ImageConverter
     {
         public static byte[] Convert(Image image)
         {

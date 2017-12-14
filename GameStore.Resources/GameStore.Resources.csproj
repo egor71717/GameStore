@@ -55,9 +55,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\blizzard.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\white.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -150,9 +150,18 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\GameController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\PublisherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\GameDetailsViewModel.cs" />
+    <Compile Include="Models\GameIndexViewModel.cs" />
+    <Compile Include="Models\ILayoutViewModelGetable.cs" />
+    <Compile Include="Models\LayoutViewModel.cs" />
+    <Compile Include="Models\PublisherDetailViewModel.cs" />
+    <Compile Include="Models\PublisherGamesViewModel.cs" />
+    <Compile Include="Models\PublisherIndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -318,7 +327,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />
@@ -423,6 +431,12 @@
     <Content Include="node_modules\jquery\src\.eslintrc.json" />
     <None Include="packages.config" />
     <Content Include="yarn.lock" />
+    <Content Include="Views\Game\Details.cshtml" />
+    <Content Include="Views\Shared\GameComments.cshtml" />
+    <Content Include="Views\Publisher\Index.cshtml" />
+    <Content Include="Views\Publisher\Details.cshtml" />
+    <Content Include="Views\Publisher\Games.cshtml" />
+    <Content Include="Views\Shared\GameItems.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GameStore.Entities\GameStore.Entities.csproj">

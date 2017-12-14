@@ -1,0 +1,48 @@
+﻿@model IEnumerable<GameStore.Entities.Comment>
+
+<link rel="stylesheet" type="text/css" href="~/Assets/css/Comment.css">
+
+<br />
+
+
+<div class="row">
+    <h2> Comments</h2>
+    @if (Model.Count() == 0)
+    {
+        <p>No comments yet</p>
+    }
+    @foreach (var item in Model)
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="panel panel-white post panel-shadow">
+                        <div class="post-heading">
+                            <div class="pull-left image">
+                                <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
+                            </div>
+                            <div class="pull-left meta">
+                                <div class="title h5">
+                                    <a href="#"><b>@item.User.FirstName @item.User.LastName</b></a>
+                                    made a post.
+                                </div>
+                                <h6 class="text-muted time">@item.Date</h6>
+                            </div>
+                        </div>
+                        <div class="post-description">
+                            <p>@item.Text</p>
+                            <div class="stats">
+                                <a href="#" class="btn btn-default stat-item">
+                                    <span class="glyphicon glyphicon-thumbs-up"></span>2
+                                </a>
+                                <a href="#" class="btn btn-default stat-item">
+                                    <span class="glyphicon glyphicon-thumbs-down"></span>12
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

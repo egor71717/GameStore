@@ -113,20 +113,20 @@ namespace GameStore.Resources {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap lego {
+        public static System.Drawing.Bitmap icon {
             get {
-                object obj = ResourceManager.GetObject("lego", resourceCulture);
+                object obj = ResourceManager.GetObject("icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Icon logo {
+        public static System.Drawing.Bitmap lego {
             get {
-                object obj = ResourceManager.GetObject("logo", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                object obj = ResourceManager.GetObject("lego", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model GameStore.UI.Models.ILayoutViewModelGetable
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -12,7 +13,7 @@
 </head>
 <body>
 
-    @Html.Partial("bootstrap");
+    @Html.Partial("bootstrap", Model.LayoutModel);
 
     <div class="container body-content">
         @RenderBody()
