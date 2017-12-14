@@ -2,13 +2,13 @@
 
 @section Scripts
 {
-    <script src="jquery-3.2.0.min.js"></script>
-    <script src="~/Content/GameItemDescription.js"></script>
+    <script src="~/Assets/js/GameItemDescription.js"></script>
 }
 
 @{
     ViewBag.Title = "Game catalog";
 }
+
 
 <h2> Game Catalog</h2>
 
@@ -17,27 +17,38 @@
     @Html.ActionLink("Sort by date", "SortByDate")
     @Html.ActionLink("Sort by price", "SortByPrice")
 </p>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-12">
+            <div class="list-group media">
+                <a href="~/Game/Details?id=@item.Id" class="list-group-item well">
+                    <div class="media-left media-middle">
+                        <img alt="Logo" src="data:image/@(item.Picture.Format);base64, @Convert.ToBase64String(item.Picture.Image)" height='69' width="184" class="media-object" />
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">@item.Name</h4>
+                        <br />
+                        <p class="list-group-item-text">
+                            Category: @foreach (var category in item.Categories)
+                            {@category.Name;
+                        }
+                        </p>
+                        <p class="list-group-item-text">Publisher: @item.Publisher.Name</p>
+                        <p class="list-group-item-text">@item.Price$</p>
+                        @*<p class="list-group-item-text">@Html.DisplayFor(modelItem => item.Discount)</p>*@
+                        <br />
+                        <div class="header">
+                            <span>See description</span>
+                        </div>
+                        <div class="content">
+                            <p class="list-group-item-text">@Html.DisplayFor(modelItem => item.Description)</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    }
+</div>
 
-@foreach (var item in Model)
-{
-    <div class="list-group media">
-        <a href="~/Game/Details?id=@item.Id" class="list-group-item well">
-            <div class="media-left media-middle">
-                <img alt="Logo" src="@Url.Content(item.Picture)" height='69' width="184" class="media-object" />
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">@Html.DisplayFor(modelItem => item.Name)</h4><p></p>
-                <p class="list-group-item-text">Category: @Html.DisplayFor(modelItem => item.Category)</p>
-                <p class="list-group-item-text">Publisher: @Html.DisplayFor(modelItem => item.Publisher.Name)</p>
-                <p class="list-group-item-text">@Html.DisplayFor(modelItem => item.Price)$</p>
-                @*<p class="list-group-item-text">@Html.DisplayFor(modelItem => item.Discount)</p>*@<p></p>
-                <div class="header">
-                    <span>See description</span>
-                </div>
-                <div class="content">
-                    <p class="list-group-item-text">@Html.DisplayFor(modelItem => item.Description)</p>
-                </div>
-            </div>
-        </a>
-    </div>
-}
+

@@ -13,7 +13,10 @@ namespace GameStore.UI.Controllers
 
         public ActionResult Index()
         {
-            var games = _dbContext.Games.Include("Publisher").ToList();
+            var games = _dbContext.Games
+                .Include("Publisher")
+                .Include("Categories")
+                .ToList();
             return View(games);
         }
     }

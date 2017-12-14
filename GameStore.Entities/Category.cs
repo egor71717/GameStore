@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace GameStore.Entities
 {
-    public class Publisher
+    public class Category
     {
-        public Publisher()
+        public Category()
         {
             this.Games = new HashSet<Game>();
         }
 
         public Int32 Id { get; set; }
         public String Name { get; set; }
-        public String Country { get; set; }
-        public String Description { get; set; }
 
-        public virtual PublisherImage Logo { get; set; }
         public virtual ICollection<Game> Games { get; set; }
     }
 }

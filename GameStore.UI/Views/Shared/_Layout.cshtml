@@ -5,13 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title – ASP.NET MVC Application</title>
-    @Styles.Render("~/Content/bootstrap.min.css")
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/node_modules/bootstrap/dist/css/bootstrap.min.css")
+    @Scripts.Render("~/node_modules/jquery/dist/jquery.min.js")
+    @Scripts.Render("~/node_modules/bootstrap/dist/js/bootstrap.min.js")
+    @Styles.Render("~/Assets/css/Site.css")
 </head>
 <body>
 
-    @*@Html.Partial("bootstrap");*@
+    @Html.Partial("bootstrap");
 
     <div class="container body-content">
         @RenderBody()
@@ -20,9 +21,6 @@
             <p>&copy; @DateTime.Now.Year - Game Store STHREEM</p>
         </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>

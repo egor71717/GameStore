@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace GameStore.Entities
 {
-    public class Comment
+    public class GameImage
     {
         public Int32 Id { get; set; }
-        public String Text { get; set; }
-        public DateTime? Date { get; set; }
+        public Byte[] Image { get; set; }
+        public String Format { get; set; }
 
-        public virtual Game Game { get; set; }
-        public virtual User User { get; set; }
+        //public virtual Game Game { get; set; }
     }
 }

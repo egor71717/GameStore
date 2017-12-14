@@ -1,0 +1,11 @@
+{
+  "name": "game_store_project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Egor Vasilev <ev11@me.com>",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  }
+}

@@ -13,6 +13,9 @@ namespace GameStore.EntityFramework
         public DbSet<Purchase> Purchases { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<PublisherImage> PublisherImages { get; set; }
+        public DbSet<GameImage> GameImages { get; set; }
 
         static ApplicationDbContext()
         {

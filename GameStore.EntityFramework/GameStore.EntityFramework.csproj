@@ -39,6 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +51,7 @@
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="ContextSingleton.cs" />
     <Compile Include="DbInitializer.cs" />
+    <Compile Include="ImageConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +62,10 @@
     <ProjectReference Include="..\GameStore.Entities\GameStore.Entities.csproj">
       <Project>{94EBD65F-E83E-42E0-AF78-640B94441DD8}</Project>
       <Name>GameStore.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameStore.Resources\GameStore.Resources.csproj">
+      <Project>{064e143f-7580-4053-b625-8c9bd369a277}</Project>
+      <Name>GameStore.Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
