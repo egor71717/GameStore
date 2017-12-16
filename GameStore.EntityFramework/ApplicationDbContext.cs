@@ -16,10 +16,11 @@ namespace GameStore.EntityFramework
         public DbSet<Category> Categories { get; set; }
         public DbSet<PublisherImage> PublisherImages { get; set; }
         public DbSet<GameImage> GameImages { get; set; }
+        public DbSet<UserImage> UserImages { get; set; }
 
         static ApplicationDbContext()
         {
-            Database.SetInitializer(new DbInitializer());
+            //Database.SetInitializer(new DbInitializer());
         }
 
         public ApplicationDbContext(String connectionStringName)

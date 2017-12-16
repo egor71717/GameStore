@@ -10,13 +10,19 @@ namespace GameStore.UI.Controllers
 {
     public class BaseController : Controller
     {
-        protected ApplicationDbContext _dbContext = ContextSingleton.GetInstance();
+        protected ApplicationDbContext DbContext = ContextSingleton.GetInstance();
         protected LayoutViewModel BaseModel { get; set; }
+
+        static BaseController()
+        {
+            //comment when deploying
+            //ContextSingleton.connectionStringName = "DevelopementLocalConnection";
+        }
 
         public BaseController()
         {
             var model = new LayoutViewModel();
-            model.HeaderCategories = _dbContext.Categories.ToList();
+            model.HeaderCategories = DbContext.Categories.ToList();
             this.BaseModel = model;
         }
     }

@@ -13,7 +13,7 @@ namespace GameStore.UI.Controllers
         public ActionResult Index()
         {
             var model = new GameIndexViewModel();
-            model.Games = _dbContext.Games
+            model.Games = DbContext.Games
                 .Include("Publisher")
                 .Include("Categories")
                 .ToList();
@@ -23,10 +23,10 @@ namespace GameStore.UI.Controllers
         public ActionResult Details(Int32 id)
         {
             var model = new GameDetailsViewModel();
-            model.Game = _dbContext.Games
+            model.Game = DbContext.Games
                 .Include("Publisher")
                 .Include("Categories")
-                .Include("Comments")
+                .Include("Comments.User.Avatar")
                 .Where(g => g.Id == id)
                 .FirstOrDefault();
             model.LayoutModel = this.BaseModel;

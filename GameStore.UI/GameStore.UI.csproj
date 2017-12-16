@@ -437,6 +437,8 @@
     <Content Include="Views\Publisher\Details.cshtml" />
     <Content Include="Views\Publisher\Games.cshtml" />
     <Content Include="Views\Shared\GameItems.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\MyASPNET.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GameStore.Entities\GameStore.Entities.csproj">

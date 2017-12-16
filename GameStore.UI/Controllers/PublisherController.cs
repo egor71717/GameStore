@@ -12,7 +12,7 @@ namespace GameStore.UI.Controllers
         public ActionResult Index()
         {
             var model = new PublisherIndexViewModel();
-            model.Publishers = this._dbContext.Publishers
+            model.Publishers = this.DbContext.Publishers
                 .ToList();
             model.LayoutModel = this.BaseModel;
             return View(model);
@@ -21,7 +21,7 @@ namespace GameStore.UI.Controllers
         public ActionResult Details(Int32 id)
         {
             var model = new PublisherDetailViewModel();
-            model.Publisher = this._dbContext.Publishers
+            model.Publisher = this.DbContext.Publishers
                 .Where(pub => pub.Id == id)
                 .FirstOrDefault();
             model.LayoutModel = this.BaseModel;
@@ -31,13 +31,13 @@ namespace GameStore.UI.Controllers
         public ActionResult Games(Int32 id)
         {
             var model = new PublisherGamesViewModel();
-            model.PublisherName = this._dbContext.Publishers
+            model.PublisherName = this.DbContext.Publishers
                 .Where(pub => pub.Id == id)
                 .Select(pub => pub.Name)
                 .FirstOrDefault();
             model.GamesModel = new GameIndexViewModel()
             {
-                Games = this._dbContext.Games
+                Games = this.DbContext.Games
                     .Where(game => game.Publisher.Id == id)
                     .ToList()
             };

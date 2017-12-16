@@ -19,6 +19,7 @@ namespace GameStore.Entities
         public Int32 Balance { get; set; }
         public String LastName { get; set; }
         public String FirstName { get; set; }
+        public UserImage Avatar { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<Purchase> Purchases { get; set; }

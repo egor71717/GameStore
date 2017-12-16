@@ -7,7 +7,7 @@ using System.IO;
 
 namespace GameStore.EntityFramework
 {
-    class DbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
+    class DbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>
     {
         protected override void Seed(ApplicationDbContext context)
         {
@@ -31,6 +31,16 @@ namespace GameStore.EntityFramework
             context.Roles.AddRange(roles.Values);
             #endregion
 
+            #region userImages
+            var userImages = new Dictionary<String, UserImage>();
+            userImages.Add("FilthyFace", new UserImage()
+            {
+                Image = ImageConverter.Convert(Resource.filthyface),
+                Format = ImageConverter.FormatToString(Resource.filthyface.RawFormat)
+            });
+            context.UserImages.AddRange(userImages.Values);
+            #endregion
+
             #region users
             var users = new Dictionary<String, User>();
             users.Add("AdminUser", new User()
@@ -44,7 +54,8 @@ namespace GameStore.EntityFramework
                 {
                     roles["User"],
                     roles["Admin"]
-                }
+                },
+                Avatar = userImages["FilthyFace"]
             });
             users.Add("SimpleUser", new User()
             {
